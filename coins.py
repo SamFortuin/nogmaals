@@ -1,7 +1,7 @@
 # name of student: Sam Fortuin
 # number of student: 99059050
-# purpose of program: 
-# function of program:
+# purpose of program: Change Calculator
+# function of program: turn value into an amount of coins
 # structure of program: 
 
 toPay = int(float(input('Amount to pay: '))* 100) #
@@ -12,7 +12,7 @@ if change > 0: #
   coinValue = 50 #
   
   while change > 0 and coinValue > 0: #
-    nrCoins = change // coinValue #
+    nrCoins = change // coinValue #floor devision to return maximum possible integer
 
     if nrCoins > 0: #
       print('return maximal ', nrCoins, ' coins of ', coinValue, ' cents!' ) #
