@@ -1,11 +1,13 @@
 from RobotArm import RobotArm
 robotArm = RobotArm('exercise 10')
-iList = [10,10]
-for i in range(5):
+#robotArm.speed = 3
+for z in range(1,6):
     robotArm.grab()
-    for var in range(iList[0]-1-i):
+    for x in range(2,13-(z*2)):
         robotArm.moveRight()
     robotArm.drop()
-    for var2 in range(iList[1]-2-i):
+    for y in range(9):
         robotArm.moveLeft()
+    for i in range(z):
+        robotArm.moveRight()
 robotArm.wait()
