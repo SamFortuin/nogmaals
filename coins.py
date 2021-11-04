@@ -8,6 +8,8 @@ toPay = int(float(input('Amount to pay: '))* 100) #turns input into float in cas
 paid = int(float(input('Paid amount: ')) * 100) #turns input into float in case of cents, multiplies by 100 to make a valid int
 change = paid - toPay #
 
+changeList = []
+
 if change > 0: #checks if any change is even needed
   coinValue = 500 #sets starting coin value, in this case €5
   
@@ -16,7 +18,8 @@ if change > 0: #checks if any change is even needed
 
     if nrCoins > 0: #prints the max amount of coins possible with current coin value
       print('return maximal', nrCoins, 'coins of', coinValue, 'cents!') #prints text to tell the user which coinvalue they're at and the max amount of coins being able to be payed out with that value
-      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return? ')) #asks user for input, converts it to an int, and stores it to be used in change
+      nrCoinsReturned = int(input('How many coins of ' + str(coinValue) +  ' cents did you return?\n')) #asks user for input, converts it to an int, and stores it to be used in change
+      changeList.append(str(nrCoins)+' coins of €'+str(format(float(coinValue/100),'.2f')))
       change -= nrCoinsReturned * coinValue #change = change - (nrCoinsReturned * coinValue), change is recalculated to see if while is still true
 
 # comment on code below: decreases coin value in set steps for nrCoins
@@ -42,4 +45,7 @@ if change > 0: #checks if any change is even needed
 if change > 0: #if any cahnge was not able to be payed because of coin incompat prints leftover amount, prints done when change was able to be payed in full
   print('Change not returned: ', str(change) + ' cents')
 else:
-  print('done')
+  print('Done. Gave back:')
+  x = 0
+  for x in range(len(changeList)):
+    print(str(changeList[x].replace('.',',').replace(',00','')+'.'))

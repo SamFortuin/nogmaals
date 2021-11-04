@@ -6,7 +6,7 @@ x = 0
 for i in range(9):
     robotArm.grab()
     scanResult = robotArm.scan()
-    if scanResult != 'red': #checks if block is white or not
+    if scanResult != 'red': #checks if block is red or not
         robotArm.drop()
     else:
         for i in range(9):
