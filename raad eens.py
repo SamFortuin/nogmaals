@@ -14,7 +14,7 @@ def randomNumFunc(textPrint):
     if debug:
         print(randomNum)
     print(textPrint)
-    while x <= 10:
+    while x < 10:
         guess = str(input('What is your guess?\n'))
         if guess == 'q' or guess == 'quit':
             pass
