@@ -1,6 +1,6 @@
 import random
 
-debug = True
+debug = False
 
 z = 0
 randomNum = 0
