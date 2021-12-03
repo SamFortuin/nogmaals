@@ -8,4 +8,4 @@ i = 0
 target = input('Welke dag van de week\n').replace('dag','').replace('an','').replace('ens','').replace('ns','').replace('nder','').replace('ij','').replace('ter','').replace('n','')
 while i < weekDict[target]:
     print(weekList[i])
-    
+    i+=1
